@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBackOffice", "FootballBackOffice\FootballBackOffice.csproj", "{7BBB051D-36A0-4309-B9C6-92703FEC2688}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballFrontOffice", "FootballFrontOffice\", "{1C4ED377-22BC-4F18-9386-27ED78D27F34}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{0e02d96c-cd2e-4a18-8cd6-9a86910a9929}|FootballClasses.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53072"
+		Debug.AspNetCompiler.PhysicalPath = "FootballFrontOffice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53072\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53072"
+		Release.AspNetCompiler.PhysicalPath = "FootballFrontOffice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53072\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53072"
+		SlnRelativePath = "FootballFrontOffice\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballClasses", "FootballClasses\FootballClasses.csproj", "{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTesting", "FootballTesting\FootballTesting.csproj", "{97AC594D-71F1-42D8-B3F9-0BBC6764704A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BBB051D-36A0-4309-B9C6-92703FEC2688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BBB051D-36A0-4309-B9C6-92703FEC2688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BBB051D-36A0-4309-B9C6-92703FEC2688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BBB051D-36A0-4309-B9C6-92703FEC2688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C4ED377-22BC-4F18-9386-27ED78D27F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4ED377-22BC-4F18-9386-27ED78D27F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4ED377-22BC-4F18-9386-27ED78D27F34}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4ED377-22BC-4F18-9386-27ED78D27F34}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6969D26-BC2A-4FB2-9456-031E791C4802}
+	EndGlobalSection
+EndGlobal
