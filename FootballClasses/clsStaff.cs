@@ -87,15 +87,31 @@ namespace FootballClasses
 
         public bool Find(int StaffNo)
         {
-            //set the private data members to the test data value
-            mStaffNo = 5;
-            mDateAdded = Convert.ToDateTime("18/02/2022");
-            mActive = true;
-            mFirstName = "John";
-            mSurname = "Potter";
-            mIncome = 7000.00;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the staff no to search for
+            DB.AddParameter("@StaffNo", StaffNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblStaff_FilterByStaffNo");
+            //if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mStaffNo = Convert.ToInt32(DB.DataTable.Rows[0]["StaffNo"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mSurname = Convert.ToString(DB.DataTable.Rows[0]["Surname"]);
+                mIncome = Convert.ToDouble(DB.DataTable.Rows[0]["Income"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                //return that everything worked ok
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
         }
     }
 }

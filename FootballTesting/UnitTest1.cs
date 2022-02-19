@@ -230,7 +230,5 @@ namespace FootballTesting
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
-
-
     }
 }
