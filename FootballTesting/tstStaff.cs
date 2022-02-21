@@ -8,6 +8,13 @@ namespace FootballTesting
     [TestClass]
     public class tstStaff
     {
+        //good test data
+        //create some test data to pass the method
+        string FirstName = "John";
+        string Surname = "Potter";
+        double Income = 7000.00;
+        string DateAdded = DateTime.Now.Date.ToString();
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -229,6 +236,74 @@ namespace FootballTesting
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to stoe any error message
+            String Error = "";
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void FirstNameMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string FirstName = "";//this should trigger an error
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void FirstNameMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string FirstName = "b"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void FirstNameMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string FirstName = "bb"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void FirstNameMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string FirstName = "bbbbb"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
     }
 }
