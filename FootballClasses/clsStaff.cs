@@ -113,5 +113,19 @@ namespace FootballClasses
                 return false;
             }
         }
+
+        public string Valid(string firstName, string surname, double income, string dateAdded)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //if the FirstName is blank
+            if (firstName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The house not may be blank : ";
+            }
+            //return any error messages
+            return Error;
+        }
     }
 }
