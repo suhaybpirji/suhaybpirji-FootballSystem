@@ -118,11 +118,33 @@ namespace FootballClasses
         {
             //create a string variable to store the error
             String Error = "";
+            //create a temporary variable to store the data values
+            DateTime DateTemp;
             //if the FirstName is blank
             if (firstName.Length == 0)
             {
                 //record the error
                 Error = Error + "The house not may be blank : ";
+            }
+            //
+            if (firstName.Length < 3)
+            {
+                //record the error
+                Error = Error + "The first name must be no less than 3 characters : ";
+            }
+            //copy the dateAdded value to the DateTemp variable
+            DateTemp = Convert.ToDateTime(dateAdded);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "The date cannot be in the past : ";
+
+            }
+            //check to see if the date is greater than todays date
+            if (DateTemp > DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "The date cannot be in the future : ";
             }
             //return any error messages
             return Error;
