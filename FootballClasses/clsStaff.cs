@@ -146,6 +146,18 @@ namespace FootballClasses
                 //record the error
                 Error = Error + "The date cannot be in the future : ";
             }
+            //if the surname is blank
+            if (surname.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The postcode may not be blank : ";
+            }
+            //if the surname is To short
+            if (surname.Length < 3)
+            {
+                //record the error
+                Error = Error + "The surname must be more than 3 characters : ";
+            }
             //return any error messages
             return Error;
         }
