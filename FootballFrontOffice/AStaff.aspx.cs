@@ -18,11 +18,37 @@ public partial class AStaff : System.Web.UI.Page
         //create an instance of the clsStaff
         clsStaff AStaff = new clsStaff();
         //capture the staff first name
-        AStaff.FirstName = txtFirstName.Text;
-        //store the address in the session object
-        Session["AStaff"] = AStaff;
-        //redirect to the viewer page
-        Response.Redirect("StaffViewer.aspx");
+        string FirstName = txtFirstName.Text;
+        //capture the staff surname
+        string Surname = txtSurname.Text;
+        //capture the staff income
+        string Income = txtIncome.Text;
+        //capture dateadded
+        string DateAdded = txtDateAdded.Text;
+        //variable to store any error messages
+        string Error = "";
+        //validate the data
+        Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+        if (Error == "")
+        {
+            //capture the first name 
+            AStaff.FirstName = FirstName;
+            //capture the surname
+            AStaff.Surname = Surname;
+            //capture the income
+            AStaff.Income = Convert.ToDouble( Income);
+            //capture the dateadded
+            AStaff.DateAdded = Convert.ToDateTime(DateAdded);
+            //store the address in the session object
+            Session["AStaff"] = AStaff;
+            //redirect to the viewer page
+            Response.Redirect("StaffViewer.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
