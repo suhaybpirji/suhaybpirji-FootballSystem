@@ -114,7 +114,7 @@ namespace FootballClasses
             }
         }
 
-        public string Valid(string firstName, string surname, double income, string dateAdded)
+        public string Valid(string firstName, string surname, string income, string dateAdded)
         {
             //create a string variable to store the error
             String Error = "";
@@ -132,19 +132,27 @@ namespace FootballClasses
                 //record the error
                 Error = Error + "The first name must be no less than 3 characters : ";
             }
-            //copy the dateAdded value to the DateTemp variable
-            DateTemp = Convert.ToDateTime(dateAdded);
-            if (DateTemp < DateTime.Now.Date)
+            try
             {
-                //record the error
-                Error = Error + "The date cannot be in the past : ";
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
 
+                }
+                //check to see if the date is greater than todays date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
             }
-            //check to see if the date is greater than todays date
-            if (DateTemp > DateTime.Now.Date)
+            catch
             {
                 //record the error
-                Error = Error + "The date cannot be in the future : ";
+                Error = Error + "The date was not a valid date : ";
             }
             //if the surname is blank
             if (surname.Length == 0)
@@ -157,6 +165,18 @@ namespace FootballClasses
             {
                 //record the error
                 Error = Error + "The surname must be more than 3 characters : ";
+            }
+            //if the income is blank
+            if (income.Length == 0)
+            {
+                //record the error
+                Error = Error + "Income  must not be blank  : ";
+            }
+            //if the surname is To short
+            if (income.Length < 3)
+            {
+                //record the error
+                Error = Error + "Income must be more than 3 characters : ";
             }
             //return any error messages
             return Error;

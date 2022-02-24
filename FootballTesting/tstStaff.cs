@@ -12,7 +12,7 @@ namespace FootballTesting
         //create some test data to pass the method
         string FirstName = "John";
         string Surname = "Potter";
-        double Income = 7000.00;
+        string Income = "7000.00";
         string DateAdded = DateTime.Now.Date.ToString();
 
         [TestMethod]
@@ -470,6 +470,118 @@ namespace FootballTesting
             //create some test data to pass to the method
             string Surname = "";
             Surname = Surname.PadRight(500, 'a');//this should fail
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string Income = "900";//this should trigger an error
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "a";
+            //create some test data to pass the method
+            string Income = "15000";//this should trigger an error
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass the method
+            string Income = "16000"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Income = "29000"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Income = "30000"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Income = "31000"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Income = "15000"; //this should be ok
+            //invoke the method
+            Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void IncomeExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Income = "100.00";
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct
