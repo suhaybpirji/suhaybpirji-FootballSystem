@@ -55,10 +55,10 @@ namespace FootballClasses
                 //create a blank staff record
                 clsStaff AStaff = new clsStaff();
                 //read in the fields from the current record
-                AStaff.Income = Convert.ToDouble(DB.DataTable.Rows[Index]["Income"]);
                 AStaff.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
                 AStaff.StaffNo = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffNo"]);
-                AStaff.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateAdded"])
+                AStaff.Income = Convert.ToDouble(DB.DataTable.Rows[Index]["Income"]);
+                AStaff.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateAdded"]);
                 AStaff.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
                 AStaff.Surname = Convert.ToString(DB.DataTable.Rows[Index]["Surname"]);;
                 //add the record to the private data member
