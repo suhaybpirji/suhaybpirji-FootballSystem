@@ -27,4 +27,4 @@ using FootballClasses;
         //bind the data to the list
         lstStaff.DataBind();
     }
-  }
+}
