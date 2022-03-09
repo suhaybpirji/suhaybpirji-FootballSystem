@@ -271,7 +271,7 @@ namespace FootballTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string FirstName = "bbbb"; //this should be ok
+            string FirstName = "b"; //this should be ok
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct
@@ -285,7 +285,7 @@ namespace FootballTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string FirstName = "bbbbb"; //this should be ok
+            string FirstName = "bb"; //this should be ok
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct
@@ -384,7 +384,7 @@ namespace FootballTesting
             //string variable to store any error message
             String Error = "a";
             //create some test data to pass the method
-            string Surname = "hhhh";//this should trigger an error
+            string Surname = "";//this should trigger an error
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct
@@ -398,7 +398,7 @@ namespace FootballTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Surname = "aaaaa"; //this should be ok
+            string Surname = "aa"; //this should be ok
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct
@@ -483,7 +483,7 @@ namespace FootballTesting
             //string variable to store any error message
             String Error = "";
             //create some test data to pass the method
-            string Income = "";//this should trigger an error
+            string Income = "900";//this should trigger an error
             //invoke the method
             Error = AStaff.Valid(FirstName, Surname, Income, DateAdded);
             //test to see that the result is correct

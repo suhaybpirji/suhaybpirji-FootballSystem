@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58B5A144-497F-4FDA-A648-240CCB0AED28}</ProjectGuid>
+    <ProjectGuid>{97AC594D-71F1-42D8-B3F9-0BBC6764704A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FootballTesting</RootNamespace>
@@ -50,16 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tstCustomer.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="tstStaffCollection.cs" />
+    <Compile Include="tstCustomer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FootballClasses\FootballClasses.csproj">
-      <Project>{0e02d96c-cd2e-4a18-8cd6-9a86910a9929}</Project>
+      <Project>{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}</Project>
       <Name>FootballClasses</Name>
     </ProjectReference>
   </ItemGroup>
