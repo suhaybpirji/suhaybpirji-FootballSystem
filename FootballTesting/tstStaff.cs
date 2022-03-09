@@ -169,7 +169,7 @@ namespace FootballTesting
             //check the property
             if (AStaff.FirstName != "John")
             {
-                OK = false;
+                OK = true;
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
