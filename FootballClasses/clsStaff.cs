@@ -158,7 +158,7 @@ namespace FootballClasses
             if (surname.Length == 0)
             {
                 //record the error 
-                Error = Error + "The postcode may not be blank : ";
+                Error = Error + "The surname may not be blank : ";
             }
             //if the surname is To short
             if (surname.Length < 3)
