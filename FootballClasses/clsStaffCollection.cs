@@ -46,7 +46,7 @@ namespace FootballClasses
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
-            DB.Execute("sproc-tblStaff_SelectAll");
+            DB.Execute("sproc_tblStaff_SelectAll");
             //get the count of records
             RecordCount = DB.Count;
             //while there are records to process
