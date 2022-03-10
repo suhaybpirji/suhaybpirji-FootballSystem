@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballBackOffice", "FootballBackOffice\FootballBackOffice.csproj", "{7BBB051D-36A0-4309-B9C6-92703FEC2688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballBackOffice", "FootballBackOffice\FootballBackOffice.csproj", "{7BBB051D-36A0-4309-B9C6-92703FEC2688}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballFrontOffice", "FootballFrontOffice\", "{1C4ED377-22BC-4F18-9386-27ED78D27F34}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -30,7 +30,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FootballFrontOffice", "Foot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballClasses", "FootballClasses\FootballClasses.csproj", "{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTesting", "FootballTesting\FootballTesting.csproj", "{97AC594D-71F1-42D8-B3F9-0BBC6764704A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTesting", "FootballTesting\FootballTesting.csproj", "{69DCB2A4-717A-461E-95E5-F15E2CF89439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +50,10 @@ Global
 		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E02D96C-CD2E-4A18-8CD6-9A86910A9929}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97AC594D-71F1-42D8-B3F9-0BBC6764704A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69DCB2A4-717A-461E-95E5-F15E2CF89439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69DCB2A4-717A-461E-95E5-F15E2CF89439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69DCB2A4-717A-461E-95E5-F15E2CF89439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69DCB2A4-717A-461E-95E5-F15E2CF89439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,12 +10,8 @@ namespace FootballTesting
         public void InstanceOK()
         {
             clsSupplier ASupplier = new clsSupplier();
-            Assert.IsNotNull(ASupplier);
+                Assert.IsNotNull(ASupplier);
 
         }
-    }
-
-    class clsSupplier
-    {
     }
 }
