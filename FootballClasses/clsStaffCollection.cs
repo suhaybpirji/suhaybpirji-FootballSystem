@@ -97,5 +97,16 @@ namespace FootballClasses
             return DB.Execute("sproc_tblStaff_Insert");
 
         }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedures
+            DB.AddParameter("@StaffNo", mThisStaff.StaffNo);
+            //execute the stored procedure
+            DB.Execute("sproc_tblStaff_Delete");
+        }
     }
 }
