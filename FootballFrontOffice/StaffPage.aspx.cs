@@ -35,4 +35,25 @@ using FootballClasses;
         //redirect to the data entry page
         Response.Redirect("AStaff.aspx");
     }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be deleted
+        Int32 StaffNo;
+        //if a record has been selected from the list
+        if (lstStaff.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to be deleted
+            StaffNo = Convert.ToInt32(lstStaff.SelectedValue);
+            //store the data in the session object
+            Session["StaffNo"] = StaffNo;
+            //redirect to the delete page
+            Response.Redirect("StaffDelete.aspx");
+        }
+        else //if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
+    }
 }
