@@ -7,6 +7,8 @@ namespace FootballClasses
     {
         //prvate data member for the list
         List<clsStaff> mStaffList = new List<clsStaff>();
+        //private data member for thisStaff
+        clsStaff mThisStaff = new clsStaff();
 
         public List<clsStaff> StaffList
         {
@@ -34,7 +36,19 @@ namespace FootballClasses
                 //we shall worry about this later
             }
         }
-        public clsStaff ThisStaff { get; set; }
+        public clsStaff ThisStaff
+        {
+            get
+            {
+                //return the private data
+                return mThisStaff;
+            }
+            set
+            {
+                //set the private data
+                mThisStaff = value;
+            }
+        }
 
         //constructor for the class
         public clsStaffCollection()
@@ -66,6 +80,22 @@ namespace FootballClasses
                 //point at the next record
                 Index++;
             }
+        }
+
+        public int Add()
+        {
+            //adds a new record to the database based on the values of thisStaff
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@FirstName", mThisStaff.FirstName);
+            DB.AddParameter("@Surname", mThisStaff.Surname);
+            DB.AddParameter("@Income", mThisStaff.Income);
+            DB.AddParameter("@DateAdded", mThisStaff.DateAdded);
+            DB.AddParameter("@Active", mThisStaff.Active);
+            //execute the query returning the primary key value
+            return DB.Execute("sproc_tblStaff_Insert");
+
         }
     }
 }

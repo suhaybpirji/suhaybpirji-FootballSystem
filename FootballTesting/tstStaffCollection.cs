@@ -72,6 +72,33 @@ namespace FootballTesting
             AllStaff.ThisStaff = TestStaff;
             //test to se that the two values are the same
             Assert.AreEqual(AllStaff.ThisStaff, TestStaff);
-        }        
+        }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            //create the item of the test data
+            clsStaff TestItem = new clsStaff();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.StaffNo = 1;
+            TestItem.FirstName = "John";
+            TestItem.Surname = "Potter";
+            TestItem.Income = 7000;
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set ThisStaff to the test data
+            AllStaff.ThisStaff = TestItem;
+            //add the record
+            PrimaryKey = AllStaff.Add();
+            //set the primary key of the test data
+            TestItem.StaffNo = PrimaryKey;
+            //find the record
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllStaff.ThisStaff, TestItem);
+        }
     }
 }
