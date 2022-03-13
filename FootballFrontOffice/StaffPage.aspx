@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StaffPage.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -16,7 +16,7 @@
         <asp:Button ID="btnDisplay" runat="server" style="z-index: 1; left: 150px; top: 448px; position: absolute" Text="Display All" />
         <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 54px; top: 449px; position: absolute; width: 76px;" Text="Apply" />
         <asp:Button ID="btnDelete" runat="server" style="z-index: 1; left: 187px; top: 536px; position: absolute" Text="Delete" />
-        <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 39px; top: 537px; position: absolute" Text="Add" />
+        <asp:Button ID="btnAdd" runat="server" style="z-index: 1; left: 39px; top: 537px; position: absolute; height: 29px;" Text="Add" OnClick="btnAdd_Click" />
         <asp:Button ID="btnEdit" runat="server" style="z-index: 1; left: 112px; top: 537px; position: absolute" Text="Edit" />
     </form>
 </body>
