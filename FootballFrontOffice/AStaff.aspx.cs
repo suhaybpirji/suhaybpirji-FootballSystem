@@ -3,9 +3,11 @@ using FootballClasses;
 
 public partial class AStaff : System.Web.UI.Page
 {
+    Int32 StaffNo;
+   
     protected void Page_Load(object sender, EventArgs e)
     {
-
+      
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -15,10 +17,17 @@ public partial class AStaff : System.Web.UI.Page
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        //add the new record
-        Add();
-        //all done so recirect back to main page
-        Response.Redirect("StaffPage.aspx");
+       if (StaffNo == -1)
+        {
+            //add the new record
+            Add();
+        }
+       else
+       {
+            //update the record
+            Update();
+
+       }
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
@@ -61,6 +70,33 @@ public partial class AStaff : System.Web.UI.Page
                 StaffBook.ThisStaff.Active = chkActive.Checked;
                 //add the record
                 StaffBook.Add();
+                //qll eon3 so redirect back to main page
+                Response.Redirect("StaffPage.aspx");
+            }
+            else
+            {
+                //report an error
+                lblError.Text = "There were problems with the data entered" + Error;
+            }
+        
+        }
+
+         void Update()
+        {
+            //create an instance of the staff book
+            clsStaffCollection StaffBook = new clsStaffCollection();
+            //validate the data on the web form
+            string Error = StaffBook.ThisStaff.Valid(txtFirstName.Text, txtSurname.Text, txtIncome.Text, txtDateAdded.Text);
+            if (Error == "")
+            {
+                //get the data entered by the user
+                StaffBook.ThisStaff.FirstName = txtFirstName.Text;
+                StaffBook.ThisStaff.Surname = txtSurname.Text;
+                StaffBook.ThisStaff.Income = Convert.ToDouble(txtIncome.Text);
+                StaffBook.ThisStaff.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
+                StaffBook.ThisStaff.Active = chkActive.Checked;
+                //add the record
+                StaffBook.Update();
                 //qll eon3 so redirect back to main page
                 Response.Redirect("StaffPage.aspx");
             }
