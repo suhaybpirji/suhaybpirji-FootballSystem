@@ -9,26 +9,24 @@ using FootballClasses;
         {
         //get the number of the address to be proccesed
         StaffNo = Convert.ToInt32(Session["StaffNo"]);
-        //if this is the first time the page is displayed
-        if (StaffNo != -1)
+        if (IsPostBack == false)
         {
-            //update the list box
-            DisplayStaff();
+                //update the list box
+                DisplayStaff();
         }
     }
-
     void DisplayStaff()
     {
-        //create an instance of the Staff Book
-        clsStaffCollection StaffBook = new clsStaffCollection();
-        //find the record to update
-        StaffBook.ThisStaff.Find(StaffNo);
-        //display the data for this record
-        txtFirstName.Text = StaffBook.ThisStaff.FirstName;
-        txtSurname.Text = StaffBook.ThisStaff.Surname;
-        txtIncome.Text = StaffBook.ThisStaff.Income;
-        txtDateAdded.Text = StaffBook.ThisStaff.DateAdded;
-        chkActive.Checked = StaffBook.ThisStaff.Active;
+        //create an instance of the staff collection
+        clsStaffCollection Staff = new clsStaffCollection();
+        //set the data source to the list of staff in the collection
+        lstStaff.DataSource = Staff.StaffList;
+        //set the name of the primary key
+        lstStaff.DataValueField = "StaffNo";
+        //set the data field to display
+        lstStaff.DataTextField = "FirstName";
+        //bind the data to the data list
+        lstStaff.DataBind();
     }
 
     protected void btnAdd_Click(object sender, EventArgs e)
@@ -71,13 +69,18 @@ using FootballClasses;
             StaffNo = Convert.ToInt32(lstStaff.SelectedValue);
             //store the data in the session object
             Session["StaffNo"] = StaffNo;
-            //redirect to the delete page
-            Response.Redirect("StaffPage.aspx");
+            //redirect to the edit page
+            Response.Redirect("AStaff.aspx");
         }
         else //if no record has been selected
         {
             //display an error
             lblError.Text = "Please select a record to delete from the list";
         }
+    }
+
+    protected void btnApply_Click(object sender, EventArgs e)
+    {
+
     }
 }

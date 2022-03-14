@@ -3,6 +3,7 @@ using FootballClasses;
 
 public partial class StaffViewer : System.Web.UI.Page
 {
+    Int32 StaffNo;
     protected void Page_Load(object sender, EventArgs e)
     {
         //create a new instance of clsStaff
