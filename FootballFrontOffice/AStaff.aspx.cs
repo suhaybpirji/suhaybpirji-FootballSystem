@@ -7,6 +7,16 @@ public partial class AStaff : System.Web.UI.Page
    
     protected void Page_Load(object sender, EventArgs e)
     {
+        //get the number of the staff to be processed
+        StaffNo = Convert.ToInt32(Session["StaffNo"]);
+        if (IsPostBack == false)
+        {
+            if (StaffNo != -1)
+            {
+                //display the current data for the record
+                DisplayStaff();
+            }
+        }
       
     }
 
@@ -18,15 +28,14 @@ public partial class AStaff : System.Web.UI.Page
     protected void btnOK_Click(object sender, EventArgs e)
     {
        if (StaffNo == -1)
-        {
+       {
             //add the new record
             Add();
-        }
+       }
        else
        {
             //update the record
             Update();
-
        }
     }
 
@@ -81,31 +90,45 @@ public partial class AStaff : System.Web.UI.Page
         
         }
 
-         void Update()
+    void Update()
+    {
+        //create an instance of the staff book
+        clsStaffCollection StaffBook = new clsStaffCollection();
+        //validate the data on the web form
+        string Error = StaffBook.ThisStaff.Valid(txtFirstName.Text, txtSurname.Text, txtIncome.Text, txtDateAdded.Text);
+        if (Error == "")
+        {
+            //get the data entered by the user
+            StaffBook.ThisStaff.FirstName = txtFirstName.Text;
+            StaffBook.ThisStaff.Surname = txtSurname.Text;
+            StaffBook.ThisStaff.Income = Convert.ToDouble(txtIncome.Text);
+            StaffBook.ThisStaff.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
+            StaffBook.ThisStaff.Active = chkActive.Checked;
+            //add the record
+            StaffBook.Update();
+            //qll eon3 so redirect back to main page
+            Response.Redirect("StaffPage.aspx");
+        }
+        else
+        {
+            //report an error
+            lblError.Text = "There were problems with the data entered" + Error;
+        }
+    }
+
+        void DisplayStaff()
         {
             //create an instance of the staff book
             clsStaffCollection StaffBook = new clsStaffCollection();
-            //validate the data on the web form
-            string Error = StaffBook.ThisStaff.Valid(txtFirstName.Text, txtSurname.Text, txtIncome.Text, txtDateAdded.Text);
-            if (Error == "")
-            {
-                //get the data entered by the user
-                StaffBook.ThisStaff.FirstName = txtFirstName.Text;
-                StaffBook.ThisStaff.Surname = txtSurname.Text;
-                StaffBook.ThisStaff.Income = Convert.ToDouble(txtIncome.Text);
-                StaffBook.ThisStaff.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
-                StaffBook.ThisStaff.Active = chkActive.Checked;
-                //add the record
-                StaffBook.Update();
-                //qll eon3 so redirect back to main page
-                Response.Redirect("StaffPage.aspx");
-            }
-            else
-            {
-                //report an error
-                lblError.Text = "There were problems with the data entered" + Error;
-            }
-        
+            //find the record to update
+            StaffBook.ThisStaff.Find(StaffNo);
+            //display the data for this record
+            txtFirstName.Text = StaffBook.ThisStaff.FirstName;
+            txtSurname.Text = StaffBook.ThisStaff.Surname;
+            txtIncome.Text = StaffBook.ThisStaff.Income.ToString();
+            txtDateAdded.Text = StaffBook.ThisStaff.DateAdded.ToString();
+            chkActive.Checked = StaffBook.ThisStaff.Active;
         }
+
 }
     
