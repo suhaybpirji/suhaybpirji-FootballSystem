@@ -22,7 +22,7 @@ public partial class AStaff : System.Web.UI.Page
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("StaffPage.aspx");
+
     }
 
     protected void btnOK_Click(object sender, EventArgs e)

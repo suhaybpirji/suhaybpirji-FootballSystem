@@ -59,6 +59,7 @@ namespace FootballClasses
             DB.Execute("sproc_tblStaff_SelectAll");
             //populate the array list with the data table
             PopulateArray(DB);
+          
         }
 
         public int Add()
