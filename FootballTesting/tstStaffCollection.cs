@@ -142,7 +142,6 @@ namespace FootballTesting
             Int32 PrimaryKey = 0;
             //set its properties
             TestItem.Active = true;
-            TestItem.StaffNo = 1;
             TestItem.FirstName = "John";
             TestItem.Surname = "Potter";
             TestItem.Income = 7000;

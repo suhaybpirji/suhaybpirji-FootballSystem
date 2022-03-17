@@ -1,18 +1,18 @@
 ﻿using System;
 using FootballClasses;
 
-   public partial class _Default : System.Web.UI.Page
-   {
+public partial class _Default : System.Web.UI.Page
+{
     Int32 StaffNo;
-        //this function handles the load event for the page
-        protected void Page_Load(object sender, EventArgs e)
-        {
+    //this function handles the load event for the page
+    protected void Page_Load(object sender, EventArgs e)
+    {
         //get the number of the address to be proccesed
         StaffNo = Convert.ToInt32(Session["StaffNo"]);
         if (IsPostBack == false)
         {
-                //update the list box
-                DisplayStaff();
+            //update the list box
+            DisplayStaff();
         }
     }
     void DisplayStaff()
@@ -65,7 +65,7 @@ using FootballClasses;
         //if a record has been selected from the list
         if (lstStaff.SelectedIndex != -1)
         {
-            //get the primary key value of the record to be deleted
+            //get the primary key value of the record to be edited
             StaffNo = Convert.ToInt32(lstStaff.SelectedValue);
             //store the data in the session object
             Session["StaffNo"] = StaffNo;
@@ -77,10 +77,5 @@ using FootballClasses;
             //display an error
             lblError.Text = "Please select a record to delete from the list";
         }
-    }
-
-    protected void btnApply_Click(object sender, EventArgs e)
-    {
-
     }
 }
