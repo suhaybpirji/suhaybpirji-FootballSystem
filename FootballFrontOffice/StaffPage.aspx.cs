@@ -31,7 +31,7 @@ using FootballClasses;
 
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        //store -1 into the session object to indicate this is a new record
+        //////store -1 into the session object to indicate this is a new record
         Session["StaffNo"] = -1;
         //redirect to the data entry page
         Response.Redirect("AStaff.aspx");
