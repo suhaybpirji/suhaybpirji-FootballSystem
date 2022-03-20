@@ -11,6 +11,9 @@ public partial class AStaff : System.Web.UI.Page
         StaffNo = Convert.ToInt32(Session["StaffNo"]);
         if (IsPostBack == false)
         {
+            //populate the list of staff first name
+            DisplayStaff();
+            //if this is not a new record
             if (StaffNo != -1)
             {
                 //display the current data for the record
