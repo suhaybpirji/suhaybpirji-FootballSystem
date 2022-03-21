@@ -7,13 +7,12 @@ using FootballClasses;
         //this function handles the load event for the page
         protected void Page_Load(object sender, EventArgs e)
         {
-        //get the number of the address to be proccesed
-        StaffNo = Convert.ToInt32(Session["StaffNo"]);
-        if (IsPostBack == false)
-        {
+        
+            if (IsPostBack == false)
+            {
                 //update the list box
                 DisplayStaff();
-        }
+            }
     }
     void DisplayStaff()
     {

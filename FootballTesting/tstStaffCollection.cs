@@ -48,7 +48,7 @@ namespace FootballTesting
             //create an instance of the class we want to create
             clsStaffCollection AllStaff = new clsStaffCollection();
             //create some test data to assign to the property
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 12;
             //assign the data to the property
             AllStaff.Count = SomeCount;
             //test to see that the two values are the same
@@ -84,7 +84,7 @@ namespace FootballTesting
             Int32 PrimaryKey = 0;
             //set its properties
             TestItem.Active = true;
-            TestItem.StaffNo = 1;
+            TestItem.StaffNo = 24;
             TestItem.FirstName = "John";
             TestItem.Surname = "Potter";
             TestItem.Income = 7000;
@@ -142,9 +142,8 @@ namespace FootballTesting
             Int32 PrimaryKey = 0;
             //set its properties
             TestItem.Active = true;
-            TestItem.StaffNo = 1;
-            TestItem.FirstName = "John";
-            TestItem.Surname = "Potter";
+            TestItem.FirstName = "Suhayb";
+            TestItem.Surname = "Pirji";
             TestItem.Income = 7000;
             TestItem.DateAdded = DateTime.Now.Date;
             //set ThisStaff to the test data
@@ -155,9 +154,9 @@ namespace FootballTesting
             TestItem.StaffNo = PrimaryKey;
             //modify the test data
             TestItem.Active = false;
-            TestItem.FirstName = "Salim";
-            TestItem.Surname = "Patel";
-            TestItem.Income = 7000.00;
+            TestItem.FirstName = "Salik";
+            TestItem.Surname = "Don";
+            TestItem.Income = 8000.00;
             TestItem.DateAdded = DateTime.Now.Date;
             //set the record based on the new test data
             AllStaff.ThisStaff = TestItem;
