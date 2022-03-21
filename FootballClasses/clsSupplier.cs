@@ -13,6 +13,16 @@ namespace FootballClasses
         private Boolean mActive;
         private DateTime mDateAdded;
 
+        public bool Find (int SupplierNo)
+        {
+            
+                //this line of code sends data out of the property
+                mSupplierNo = 21;
+                mPostCode = "LE1";
+                mActive = true;
+                mDateAdded = Convert.ToDateTime("16/9/2015");
+                return true;
+        }
 
         public bool Active
         {
@@ -40,7 +50,7 @@ namespace FootballClasses
         //      private String mPostCode;
         //    private Boolean mActive;
         //   private DateTime mDateAdded;
-        public int SupplierNo
+        public Int32 SupplierNo
         {
             get
             {
@@ -53,5 +63,11 @@ namespace FootballClasses
                 mSupplierNo = value;
             }
         }
+
+       
     }
 }
+
+
+
+
