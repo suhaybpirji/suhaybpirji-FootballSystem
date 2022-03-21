@@ -121,11 +121,11 @@ namespace FootballTesting
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //check the staff no
-            if (AStaff.StaffNo != 5)
+            if (AStaff.StaffNo != 6)
             {
                 OK = false;
             }
@@ -142,11 +142,11 @@ namespace FootballTesting
             //boolean variable to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //check the staff no
-            if (AStaff.DateAdded != Convert.ToDateTime("18/02/2022"))
+            if (AStaff.DateAdded != Convert.ToDateTime("09/03/2022"))
             {
                 OK = false;
             }
@@ -184,11 +184,11 @@ namespace FootballTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //check the property
-            if (AStaff.Surname != "Potter")
+            if (AStaff.Surname != "Patel")
             {
                 OK = false;
             }
@@ -205,11 +205,11 @@ namespace FootballTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //check the property
-            if (AStaff.Income != 7000.00)
+            if (AStaff.Income != 10000.00)
             {
                 OK = false;
             }
@@ -226,7 +226,7 @@ namespace FootballTesting
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //check the property

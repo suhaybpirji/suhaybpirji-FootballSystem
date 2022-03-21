@@ -48,7 +48,7 @@ namespace FootballTesting
             //create an instance of the class we want to create
             clsStaffCollection AllStaff = new clsStaffCollection();
             //create some test data to assign to the property
-            Int32 SomeCount = 12;
+            Int32 SomeCount = 11;
             //assign the data to the property
             AllStaff.Count = SomeCount;
             //test to see that the two values are the same
@@ -198,18 +198,20 @@ namespace FootballTesting
             //var to store outcome
             Boolean OK = true;
             //apply a first name that doesnt exist'
-            FilteredStaff.ReportByFirstName("Dave");
+            FilteredStaff.ReportByFirstName("John");
             //check that the correct number of records are found
-            if (FilteredStaff.StaffList[0].StaffNo != 10)
+            if (FilteredStaff.Count == 2)
             {
-                OK = false;
+                if (FilteredStaff.StaffList[0].StaffNo != 14)
+                {
+                    OK = false;
+                }
+                //check that the first record is id 30
+                if (FilteredStaff.StaffList[1].StaffNo != 15)
+                {
+                    OK = false;
+                }
             }
-            //check that the first record is id 30
-            if (FilteredStaff.StaffList[1].StaffNo != 5)
-            {
-                OK = false;
-            }
-
             else
             {
                 OK = false;

@@ -33,7 +33,7 @@ namespace FootballClasses
             }
             set
             {
-                //we shall worry about this later
+                //do this later
             }
         }
         public clsStaff ThisStaff
