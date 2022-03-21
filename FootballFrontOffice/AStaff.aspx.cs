@@ -101,6 +101,8 @@ public partial class AStaff : System.Web.UI.Page
         string Error = StaffBook.ThisStaff.Valid(txtFirstName.Text, txtSurname.Text, txtIncome.Text, txtDateAdded.Text);
         if (Error == "")
         {
+            //find the record to update
+            StaffBook.ThisStaff.Find(StaffNo);
             //get the data entered by the user
             StaffBook.ThisStaff.FirstName = txtFirstName.Text;
             StaffBook.ThisStaff.Surname = txtSurname.Text;

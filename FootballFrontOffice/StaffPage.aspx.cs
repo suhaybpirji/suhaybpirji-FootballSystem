@@ -7,7 +7,7 @@ using FootballClasses;
         //this function handles the load event for the page
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+            StaffNo = Convert.ToInt32(Session["StaffNo"]);
             if (IsPostBack == false)
             {
                 //update the list box

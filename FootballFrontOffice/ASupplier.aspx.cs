@@ -18,7 +18,7 @@ public partial class ASupplier : System.Web.UI.Page
     protected void btnOK_Click(object sender, EventArgs e)
     {
         clsSupplier ASupplier = new clsSupplier();
-        ASupplier.SupplierNo = txtSupplier.Text;
+        //ASupplier.SupplierNo = txtSupplier.Text;
         Session["ASupplier"] = ASupplier;
         Response.Redirect("SupplierViewer.aspx");
 
