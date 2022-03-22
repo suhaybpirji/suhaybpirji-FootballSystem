@@ -11,18 +11,31 @@
         <div>
         </div>
         <asp:Label ID="lblSupplier" runat="server" Text="SupplierNo"></asp:Label>
-        <input id="txtSupplier" type="text" /><p>
-            <asp:Label ID="lblPostCode" runat="server" Text="PostCode"></asp:Label>
-            <input id="txtPostCode" type="text" /></p>
+                <asp:TextBox ID="txtSupplier" runat="server" style="z-index: 1; left: 109px; top: 36px; position: absolute"></asp:TextBox>
+
+                <asp:TextBox ID="txtPostCode" runat="server" style="z-index: 1; left: 100px; top: 242px; position: absolute"></asp:TextBox>
+
+                <asp:TextBox ID="txtDateAdded" runat="server" style="z-index: 1; left: 107px; top: 74px; position: absolute"></asp:TextBox>
+
+        <p>
+
         <asp:Label ID="lblDateAdded" runat="server" Text="DateAdded"></asp:Label>
-        <input id="txtDateAdded" type="text" /><p>
+        </p>
+    <p>
+        <asp:Label ID="lblError" runat="server"></asp:Label>
+
             <asp:CheckBox ID="Active" runat="server" />
         </p>
-        <asp:Label ID="lblError" runat="server"></asp:Label>
         <p>
             <asp:Button ID="btnOK" runat="server" Text="OK" Width="53px" OnClick="btnOK_Click" />
             <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
         </p>
+        <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click" />
+        <p>
+
+            <asp:Label ID="lblPostCode" runat="server" Text="PostCode"></asp:Label>
+        
+        </p>
     </form>
-</body>
+    </body>
 </html>
