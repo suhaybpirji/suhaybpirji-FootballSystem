@@ -16,7 +16,26 @@ namespace FootballClasses
         public bool Find (int SupplierNo)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter
+            DB.AddParameter("@SupplierNo", SupplierNo);
+            DB.Execute("sproc_tblSupplier_FilterBySupplierNo");
+            if (DB.Count == 1)
+            {
+                mSupplierNo = Convert.ToInt32(DB.DataTable.Rows[0]["SupplierNo"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["PostCode"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["True"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["PostCode"]);
+
+                return true;
+            }
+
+            else
+            {
+
+                return false;
+            }
+
+
+            
         }
 
         public bool Active
