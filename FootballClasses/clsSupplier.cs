@@ -15,13 +15,8 @@ namespace FootballClasses
 
         public bool Find (int SupplierNo)
         {
-            
-                //this line of code sends data out of the property
-                mSupplierNo = 21;
-                mPostCode = "LE1";
-                mActive = true;
-                mDateAdded = Convert.ToDateTime("16/9/2015");
-                return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter
         }
 
         public bool Active
