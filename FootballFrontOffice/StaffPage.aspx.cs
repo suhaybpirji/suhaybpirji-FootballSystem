@@ -80,6 +80,6 @@ using FootballClasses;
 
     protected void btnApply_Click(object sender, EventArgs e)
     {
-        //this is ol
+        
     }
 }
