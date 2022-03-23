@@ -13,7 +13,7 @@ namespace FootballClasses
         private Boolean mActive;
         private DateTime mDateAdded;
 
-        public bool Find (int SupplierNo)
+        public bool Find(int SupplierNo)
         {
             clsDataConnection DB = new clsDataConnection();
             DB.AddParameter("@SupplierNo", SupplierNo);
@@ -35,7 +35,7 @@ namespace FootballClasses
             }
 
 
-            
+
         }
 
         public bool Active
@@ -82,10 +82,53 @@ namespace FootballClasses
 
         public string Valid(string dateAdded, string postCode)
         {
-            return "";
+            {
+                //create a string variable to store the error
+                String Error = "";
+                //create a temporary variable to store date values
+                DateTime DateTemp;
+                //if the HouseNo is blank
+                if (postCode.Length == 0)
+                {
+                    //record the error
+                    Error = Error + "The house no may not be blank : ";
+                }
+                //if the house no is greater than 6 characters
+                if (postCode.Length > 6)
+                {
+                    //record the error
+                    Error = Error + "The postcode must be less than 6 characters : ";
+                }
+                try
+                {
+                    //copy the dateAdded value to the DateTemp variable
+                    DateTemp = Convert.ToDateTime(dateAdded);
+                    if (DateTemp < DateTime.Now.Date)
+                    {
+                        //record the error
+                        Error = Error + "The date cannot be in the past : ";
+                    }
+                    //check to see if the date is greater than today's date
+                    if (DateTemp > DateTime.Now.Date)
+                    {
+                        //record the error
+                        Error = Error + "The date cannot be in the future : ";
+                    }
+                }
+                catch
+                {
+                    Error = Error + "the date wa not a valid date";
+
+                }
+                //return any error messages
+                return Error;
+            }
+
+
         }
     }
 }
+
 
 
 
