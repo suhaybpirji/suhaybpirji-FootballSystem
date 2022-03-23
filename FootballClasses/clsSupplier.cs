@@ -78,7 +78,12 @@ namespace FootballClasses
             }
         }
 
-       
+        public string PostCode { get; set; }
+
+        public string Valid(string dateAdded, string postCode)
+        {
+            return "";
+        }
     }
 }
 

@@ -8,6 +8,11 @@ namespace FootballTesting
     [TestClass]
     public class tstSupplier
     {
+        // TestData
+        string DateAdded = DateTime.Now.Date.ToString();
+        string PostCode = "LE1";
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -89,7 +94,7 @@ namespace FootballTesting
             Int32 SupplierNo = 21;
             // fix find
             Found = ASupplier.Find(SupplierNo);
-            if (ASupplier.SupplierNo !=21)
+            if (ASupplier.SupplierNo != 21)
             {
                 OK = false;
             }
@@ -160,21 +165,28 @@ namespace FootballTesting
             Assert.IsTrue(OK);
         }
 
-    }
-
-    class clsSupplier
-    {
-        public bool Active { get; internal set; }
-        public DateTime DateAdded { get; internal set; }
-        public int SupplierNo { get; internal set; }
-        public string PostCode { get; internal set; }
-
-        public bool Find(int supplierNo)
+        [TestMethod]
+        public void ValidMethodOK()
         {
-            return true; 
+            //create an instance of the class we want to create
+            clsSupplier ASupplier = new clsSupplier();
+            //boolean variable to store the result of the search
+            String Error = "";
+            Error = ASupplier.Valid(DateAdded, PostCode);
+
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+
+
+
+
+        }
+
+
         }
     }
-}
+
+
 
 
 
