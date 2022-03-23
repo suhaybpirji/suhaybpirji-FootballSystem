@@ -7,7 +7,23 @@ namespace FootballClasses
         //private data member for the customer no property
         private Int32 mCustomerNo;
         private DateTime mDateAdded;
-        public bool Active { get; set; }
+        private string mFirstName;
+        private string mSurname;
+        private string mAddress;
+        private string mMobileNumber;
+        private Boolean mActive;
+
+        public bool Active 
+        {
+            get
+            {
+                return mActive;
+            }
+            set
+            {
+                mActive = value;
+            }
+        }
         public DateTime DateAdded
         {
             get
@@ -32,16 +48,61 @@ namespace FootballClasses
                 mCustomerNo = value;
             }
         }
-        public string FirstName { get; set; }
-        public string Surname { get; set; }
-        public string Address { get; set; }
-        public string MobileNumber { get; set; }
+        public string FirstName 
+        {
+            get
+            {
+                return mFirstName;
+            }
+            set
+            {
+                mFirstName = value;
+            }
+        }
+        public string Surname 
+        {
+            get
+            {
+                return mSurname;
+            }
+            set
+            {
+                mSurname = value;
+            }
+        }
+        public string Address 
+        {
+            get
+            {
+                return mAddress;
+            }
+            set
+            {
+                mAddress = value;
+            }
+        }
+        public string MobileNumber 
+        {
+            get
+            {
+                return mMobileNumber;
+            }
+            set
+            {
+                mMobileNumber = value;
+            }
+        }
 
         public bool Find(int customerNo)
         {
             //set the private data members to the test data value
-            mCustomerNo = 2;
-            mDateAdded = Convert.ToDateTime("22/03/2022");
+            mCustomerNo = 1;
+            mDateAdded = Convert.ToDateTime("17/03/2022");
+            mFirstName = "Mohammed";
+            mSurname = "Tawad";
+            mAddress = "45 Osborne Road";
+            mMobileNumber = "07742529030";
+            mActive = true;
             //always return true
             return true;
         }
