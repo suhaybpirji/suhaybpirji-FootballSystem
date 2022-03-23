@@ -105,7 +105,7 @@ namespace FootballTesting
             //Boolean variable to store the results of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 StaffNo = 5;
+            Int32 StaffNo = 6;
             //invoke the method
             Found = AStaff.Find(StaffNo);
             //test to see if the result is true
