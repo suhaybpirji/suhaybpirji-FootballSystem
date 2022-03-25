@@ -84,9 +84,60 @@ namespace FootballTesting
             Assert.AreEqual(AllSuppliers.Count, TestList.Count);
 
         }
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllStaff = new clsSupplierCollection();
+            //create the item of the test data
+            clsSupplier TestItem = new clsSupplier();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.SupplierNo = 24;
+            TestItem.PostCode = "LE1 6RL";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set ThisStaff to the test data
+            AllStaff.ThisSupplier = TestItem;
+            //add the record
+            PrimaryKey = AllStaff.Add();
+            //set the primary key of the test data
+            TestItem.SupplierNo = PrimaryKey;
+            //find the record
+            AllStaff.ThisSupplier.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllStaff.ThisSupplier, TestItem);
+        }
 
-
-
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSupplier = new clsSupplierCollection();
+            //create the item of the test data
+            clsSupplier TestItem = new clsSupplier();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.SupplierNo = 1;
+            TestItem.PostCode = "LE1";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set ThisStaff to the test data
+            AllSupplier.ThisSupplier = TestItem;
+            //add the record
+            PrimaryKey = AllSupplier.Add();
+            //set the primary key of the test data
+            TestItem.SupplierNo = PrimaryKey;
+            //find the record
+            AllSupplier.ThisSupplier.Find(PrimaryKey);
+            //delete the record
+            AllSupplier.Delete();
+            //now find the record
+            Boolean Found = AllSupplier.ThisSupplier.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.IsFalse(Found);
+        }
 
 
 

@@ -289,51 +289,6 @@ namespace FootballTesting
         }
 
         [TestMethod]
-        public void HouseNoMinPlusOne()
-        {
-            //create an instance of the class we want to create
-            clsSupplier ASupplier = new clsSupplier();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string HouseNo = "aa"; //this should be ok
-            //invoke the method
-            Error = ASupplier.Valid(PostCode, DateAdded);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void HouseNoMaxLessOne()
-        {
-            //create an instance of the class we want to create
-            clsSupplier ASupplier = new clsSupplier();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string HouseNo = "aaaaa"; //this should be ok
-            //invoke the method
-            Error = ASupplier.Valid(PostCode, DateAdded);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-        [TestMethod]
-        public void HouseNoMax()
-        {
-            //create an instance of the class we want to create
-            clsSupplier ASupplier = new clsSupplier();
-            //string variable to store any error message
-            String Error = "";
-            //create some test data to pass to the method
-            string HouseNo = "aaaaaa"; //this should be ok
-            //invoke the method
-            Error = ASupplier.Valid(PostCode, DateAdded);
-            //test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-
-        [TestMethod]
         public void DateAddedExtremeMin()
         {
             //create an instance of the class we want to create
