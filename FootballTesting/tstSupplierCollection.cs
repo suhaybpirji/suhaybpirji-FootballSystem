@@ -88,7 +88,7 @@ namespace FootballTesting
         public void AddMethodOK()
         {
             //create an instance of the class we want to create
-            clsSupplierCollection AllStaff = new clsSupplierCollection();
+            clsSupplierCollection AllSupplier = new clsSupplierCollection();
             //create the item of the test data
             clsSupplier TestItem = new clsSupplier();
             //var to store the primary key
@@ -98,16 +98,16 @@ namespace FootballTesting
             TestItem.SupplierNo = 24;
             TestItem.PostCode = "LE1 6RL";
             TestItem.DateAdded = DateTime.Now.Date;
-            //set ThisStaff to the test data
-            AllStaff.ThisSupplier = TestItem;
+            //set Supplier to the test data
+            AllSupplier.ThisSupplier = TestItem;
             //add the record
-            PrimaryKey = AllStaff.Add();
+            PrimaryKey = AllSupplier.Add();
             //set the primary key of the test data
             TestItem.SupplierNo = PrimaryKey;
             //find the record
-            AllStaff.ThisSupplier.Find(PrimaryKey);
+            AllSupplier.ThisSupplier.Find(PrimaryKey);
             //test to see that the two values are the same
-            Assert.AreEqual(AllStaff.ThisSupplier, TestItem);
+            Assert.AreEqual(AllSupplier.ThisSupplier, TestItem);
         }
 
         public void DeleteMethodOK()
@@ -123,7 +123,7 @@ namespace FootballTesting
             TestItem.SupplierNo = 1;
             TestItem.PostCode = "LE1";
             TestItem.DateAdded = DateTime.Now.Date;
-            //set ThisStaff to the test data
+            //set Supplier to the test data
             AllSupplier.ThisSupplier = TestItem;
             //add the record
             PrimaryKey = AllSupplier.Add();
@@ -139,8 +139,42 @@ namespace FootballTesting
             Assert.IsFalse(Found);
         }
 
-
-
+        [TestMethod]
+        public void UpdateMethod()
+        {
+            //create an instance of the class we want to create
+            clsSupplierCollection AllSupplier = new clsSupplierCollection();
+            //create the item of the test data
+            clsSupplier TestItem = new clsSupplier();
+            //var to store the primary key
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.Active = true;
+            TestItem.PostCode = "LE1";
+            TestItem.SupplierNo = "8";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set ThisSupplier to the test data
+            AllSupplier.ThisSupplier = TestItem;
+            //add the record
+            PrimaryKey = AllSupplier.Add();
+            //set the primary key of the test data
+            TestItem.SupplierNo = PrimaryKey;
+            //modify the test data
+            TestItem.Active = false;
+            TestItem.PostCode = "LE3";
+            TestItem.SupplierNo = "9";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set the record based on the new test data
+            AllSupplier.ThisSupplier = TestItem;
+            //update the record
+            AllSupplier.Update();
+            //find the record
+            AllSupplier.ThisSupplier.Find(PrimaryKey);
+            //test to see Supplier matches the test data
+            Assert.AreEqual(AllSupplier.ThisSupplier, TestItem);
+        }
     }
+}
 
-    }
+
+    

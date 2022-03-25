@@ -12,8 +12,8 @@
         </div>
         <asp:Label ID="Label1" runat="server" Text="Are You Sure You Want To Delete This?"></asp:Label>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Yes" />
-            <asp:Button ID="Button2" runat="server" Text="No" />
+            <asp:Button ID="btnYes" runat="server" Text="Yes" />
+            <asp:Button ID="btnNo" runat="server" Text="No" />
         </p>
     </form>
 </body>
