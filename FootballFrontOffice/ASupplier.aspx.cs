@@ -16,27 +16,12 @@ public partial class ASupplier : System.Web.UI.Page
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        clsSupplier ASupplier = new clsSupplier();
-        string SupplierNo = txtSupplier.Text;
-        string DateAdded = txtDateAdded.Text;
-        string PostCode = txtPostCode.Text;
-        string Error = "";
-
-        Error = ASupplier.Valid(SupplierNo, txtPostCode, DateAdded);
-        if (Error == "")
-        {
-
-            ASupplier.SupplierNo = txtSupplier.Text;
-            ASupplier.PostCode = txtPostCode.Text;
-            ASupplier.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
-            Session["ASupplier"] = ASupplier;
-            Response.Redirect("SupplierViewer.aspx");
-        }
-        else
-        {
-            lblError.Text=Error;
-        }
+        Add();
+        Response.Redirect("SupplierPage.aspx");
+    
+    
     }
+      
 
 
     protected void btnFind_Click(object sender, EventArgs e)
@@ -54,5 +39,28 @@ public partial class ASupplier : System.Web.UI.Page
 
 
         }
+
+        void Add()
+        {
+
+
+            FootballClasses.clsSupplierCollection SupplierBook = new FootballClasses.clsSupplierCollection();
+            String Error = SupplierBook.ThisSupplier.Valid(txtDateAdded.Text, txtPostCode.Text, txtSupplier.Text);
+            if (Error == "")
+            {
+                SupplierBook.ThisSupplier.SupplierNo = Convert.ToInt32(txtSupplier.Text);
+                SupplierBook.ThisSupplier.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
+                SupplierBook.ThisSupplier.PostCode = (txtPostCode).Text;
+
+                SupplierBook.Add();
+
+
+            }
+            else
+            {
+                lblError.Text = "There were problems with the data entered " + Error;
+            }
+        }
+
     }
 }

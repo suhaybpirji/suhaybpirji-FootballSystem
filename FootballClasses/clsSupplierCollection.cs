@@ -5,7 +5,12 @@ namespace FootballClasses
 {
     public class clsSupplierCollection
     {
-        List<clsSupplier> mSuppliersList = new List<clsSupplier>();
+        
+            List<clsSupplier> mSuppliersList = new List<clsSupplier>();
+
+            clsSupplier mThisSupplier = new clsSupplier();
+        
+
         public List<clsSupplier> SuppliersList
         {
             get
@@ -34,7 +39,20 @@ namespace FootballClasses
 
         }
 
+        public clsSupplier ThisSupplier
+        {
+            get
+            {
+                return mThisSupplier;
+            }
+            set
+            {
+                mThisSupplier = value;
 
+            }
+
+
+        }
 
 
         public clsSupplierCollection()
@@ -55,7 +73,26 @@ namespace FootballClasses
 
 
 
-        public clsSupplier ThisSupplier { get; set; }
+
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@SupplierNo", mThisSupplier.SupplierNo);
+            DB.AddParameter("@DateAdded", mThisSupplier.DateAdded);
+            DB.AddParameter("@PostCode", mThisSupplier.PostCode);
+            DB.AddParameter("@Active", mThisSupplier.Active);
+
+            return DB.Execute("sproc_tblSupplier_Insert");
+
+
+        }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@SupplierNo", mThisSupplier.SupplierNo);
+            DB.Execute("sproc_tblSupplier_Delete");
+        }
     }
 
     public clsSupplierCollection()
@@ -74,9 +111,9 @@ namespace FootballClasses
             ASupplier.PostCode = Convert.ToString(DB.DataTable.Rows[Index]["PostCode"]);
             mSuppliersList.Add(ASupplier);
             Index++;
+        }
 
 
 
     }
   }
-}
