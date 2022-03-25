@@ -79,6 +79,7 @@ namespace FootballClasses
         }
 
         public string PostCode { get; set; }
+        public string Supplier { get; set; }
 
         public string Valid(string dateAdded, string postCode)
         {

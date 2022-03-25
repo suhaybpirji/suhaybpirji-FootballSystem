@@ -151,7 +151,7 @@ namespace FootballTesting
             //set its properties
             TestItem.Active = true;
             TestItem.PostCode = "LE1";
-            TestItem.SupplierNo = "8";
+            TestItem.Supplier = "8";
             TestItem.DateAdded = DateTime.Now.Date;
             //set ThisSupplier to the test data
             AllSupplier.ThisSupplier = TestItem;
@@ -162,7 +162,7 @@ namespace FootballTesting
             //modify the test data
             TestItem.Active = false;
             TestItem.PostCode = "LE3";
-            TestItem.SupplierNo = "9";
+            TestItem.Supplier = "9";
             TestItem.DateAdded = DateTime.Now.Date;
             //set the record based on the new test data
             AllSupplier.ThisSupplier = TestItem;

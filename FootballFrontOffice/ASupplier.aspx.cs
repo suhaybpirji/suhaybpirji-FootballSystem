@@ -59,7 +59,6 @@ public partial class ASupplier : System.Web.UI.Page
         {
             txtSupplier.Text = ASupplier.Supplier;
             txtPostCode.Text = ASupplier.PostCode;
-            txtDateAdded.Text = ASupplier.DateAdded;
 
 
         }
